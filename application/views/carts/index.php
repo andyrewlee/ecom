@@ -63,6 +63,42 @@
                     </table>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="first_name">First Name:</label>
+                            <input type="text" class="form-control" id="first_name">
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Last Name:</label>
+                            <input type="text" class="form-control" id="last_name">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address:</label>
+                            <input type="text" class="form-control" id="address">
+                        </div>
+                        <div class="form-group">
+                            <label for="address_two">Address 2</label>
+                            <input type="text" class="form-control" id="address_two">
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City:</label>
+                            <input type="text" class="form-control" id="city">
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State:</label>
+                            <input type="text" class="form-control" id="state">
+                        </div>
+                        <div class="form-group">
+                            <label for="zipcode">Zipcode:</label>
+                            <input type="text" class="form-control" id="zipcode">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                </div>
+            </div>
         </div>
     </body>
 </html>
