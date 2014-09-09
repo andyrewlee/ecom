@@ -1,3 +1,7 @@
+/* General Formatting
+ * ==================================
+ */
+
 body {
   padding-top: 70px;
   background-image: url('../img/subtle_dots.png');
@@ -7,9 +11,31 @@ body {
 img {
   width: 100%;
 }
+
+/* Navbar
+ * ==================================
+ */
+
+.navbar-inverse {
+  opacity: 0.95;
+}
+.glyphicon-shopping-cart {
+  padding-right: 10px;
+}
+.alert-danger {
+  margin-top: -20px;
+}
+
+
+/* Products
+ * ==================================
+ */
+
 #categories {
   background-color: #eeeeee;
   margin-top: 40px;
+  opacity: 0.7;
+  border-radius: 6px;
 }
 .price {
   font-size: 0.7em;
@@ -30,7 +56,16 @@ img {
 #product_name {
   margin-top: 0;
 }
+
+/* Payment
+ * ==================================
+ */
+
 .cart_edit {
+  margin-left: 20px;
+  margin-right: 25px;
+}
+.cart_update {
   margin-left: 20px;
 }
 #continue_shopping {
@@ -44,5 +79,19 @@ img {
 }
 #total {
   margin-left: 50px;
+}
+
+/* Footer
+ * ==================================
+ */
+
+#footer {
+  border-top: 1px solid #eee;
+  margin: 40px 0;
+  padding: 20px 0;
+  text-align: center;
+}
+#footer p {
+  margin-bottom: 0;
 }
 
