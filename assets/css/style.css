@@ -1,0 +1,29 @@
+body {
+  padding-top: 70px;
+}
+img {
+  width: 100%;
+}
+#categories {
+  background-color: #eeeeee;
+  margin-top: 40px;
+}
+.price {
+  font-size: 0.7em;
+  color: #428bca;
+}
+#product_images {
+  margin: 20px 0;
+}
+#purchase {
+  margin-top: 20px;
+}
+#total_price {
+  color: #428bca;
+}
+#product_show {
+  margin-top: 40px;
+}
+#product_name {
+  margin-top: 0;
+}
