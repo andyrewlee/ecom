@@ -4,12 +4,12 @@
                 <div class="col-md-2">
                     <div id="categories" class="bs-docs-sidebar">
                         <ul class="nav bs-docs-sidenav">
-                            <li><a href="#">Category 1</a></li>
-                            <li><a href="#">Category 2</a></li>
-                            <li><a href="#">Category 3</a></li>
-                            <li><a href="#">Category 4</a></li>
-                            <li><a href="#">Category 5</a></li>
-                            <li><a href="#">Category 6</a></li>
+                            <li><a href="/products/">Category 1</a></li>
+                            <li><a href="/products/">Category 2</a></li>
+                            <li><a href="/products/">Category 3</a></li>
+                            <li><a href="/products/">Category 4</a></li>
+                            <li><a href="/products/">Category 5</a></li>
+                            <li><a href="/products/">Category 6</a></li>
                         </ul>
                     </div>
                 </div>

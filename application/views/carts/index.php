@@ -33,9 +33,7 @@
                 <div class="col-md-12">
                     <h2 id="total" class="pull-right">Total: <span id="total_price">$39.00</span></h2>
                 </div>
-                <button id="continue_shopping" type="button" class="pull-right btn btn-success">
-                    Continue Shopping
-                </button>
+                <a href="/products/" id="continue_shopping" type="button" class="pull-right btn btn-success">Continue Shopping </a>
             </div>
             <div class="row">
                 <div class="col-md-5">

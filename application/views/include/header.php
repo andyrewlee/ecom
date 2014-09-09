@@ -32,7 +32,7 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Shopping Cart</a>
+                            <a href="/carts"><span class="glyphicon glyphicon-shopping-cart"></span>Shopping Cart</a>
                         </li>
                     </ul>
                 </div>
