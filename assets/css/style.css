@@ -1,5 +1,8 @@
 body {
   padding-top: 70px;
+  background-image: url('../img/subtle_dots.png');
+  background-repeat: repeat;
+  font-family: 'Droid Sans', sans-serif;
 }
 img {
   width: 100%;
@@ -28,11 +31,18 @@ img {
   margin-top: 0;
 }
 .cart_edit {
-  margin-left: 40px;
+  margin-left: 20px;
 }
 #continue_shopping {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 #billing {
   margin-bottom: 0;
 }
+.update_cart {
+  width: 50px;
+}
+#total {
+  margin-left: 50px;
+}
+
