@@ -14,7 +14,6 @@ img {
 .jumbotron {
   background-position: 200% 100%;
   padding: 100px 0 120px 0;
-  margin-bottom: 70px;
   margin-top: -20px;
   background: url('../img/seamless_paper_texture.png');
 }
@@ -84,7 +83,7 @@ img {
 .cart_update {
   margin-left: 20px;
 }
-#continue_shopping {
+.continue_shopping {
   margin-top: 20px;
 }
 #billing {

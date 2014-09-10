@@ -1,7 +1,7 @@
 <?php include($_SERVER['DOCUMENT_ROOT']."/application/views/include/header.php"); ?>
         <div class="container">
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-sm-2">
                     <div id="categories" class="bs-docs-sidebar">
                         <ul class="nav bs-docs-sidenav">
                             <li><a href="/products/">Category 1</a></li>
@@ -13,10 +13,10 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-10">
+                <div class="col-sm-10">
                     <h2 class="page-header">Category Name</h2>
                     <div class="row">
-                        <div class="col-md-2 col-md-offset-10">
+                        <div class="col-sm-2 col-sm-offset-10">
                             <select class="form-control">
                                 <option>Price</option>
                                 <option>Most Popular</option>
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-sm-3">
                             <div class="product">
                                 <a href="/products/show">
                                     <h4 class="product_name">Product 1 <span class="price pull-right">$19.99</span></h4>
@@ -33,7 +33,7 @@
                                 <p>This is a description for Product 1. Standard length</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-3">
                             <div class="product">
                                 <a href="/products/show">
                                     <h4 class="product_name">Product 1 <span class="price pull-right">$19.99</span></h4>
@@ -42,7 +42,7 @@
                                 <p>This is a description for Product 1. Standard length</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-3">
                             <div class="product">
                                 <a href="/products/show">
                                     <h4 class="product_name">Product 1 <span class="price pull-right">$19.99</span></h4>
@@ -51,7 +51,7 @@
                                 <p>This is a description for Product 1. Standard length</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-3">
                             <div class="product">
                                 <a href="/products/show">
                                     <h4 class="product_name">Product 1 <span class="price pull-right">$19.99</span></h4>
@@ -60,7 +60,7 @@
                                 <p>This is a description for Product 1. Standard length</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-3">
                             <div class="product">
                                 <a href="/products/show">
                                     <h4 class="product_name">Product 1 <span class="price pull-right">$19.99</span></h4>
@@ -69,7 +69,7 @@
                                 <p>This is a description for Product 1. Standard length</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-3">
                             <div class="product">
                                 <a href="/products/show">
                                     <h4 class="product_name">Product 1 <span class="price pull-right">$19.99</span></h4>
@@ -78,7 +78,7 @@
                                 <p>This is a description for Product 1. Standard length</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-3">
                             <div class="product">
                                 <a href="/products/show">
                                     <h4 class="product_name">Product 1 <span class="price pull-right">$19.99</span></h4>
@@ -87,7 +87,7 @@
                                 <p>This is a description for Product 1. Standard length</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-3">
                             <div class="product">
                                 <a href="/products/show">
                                     <h4 class="product_name">Product 1 <span class="price pull-right">$19.99</span></h4>
@@ -96,7 +96,7 @@
                                 <p>This is a description for Product 1. Standard length</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-3">
                             <div class="product">
                                 <a href="/products/show">
                                     <h4 class="product_name">Product 1 <span class="price pull-right">$19.99</span></h4>
@@ -105,7 +105,7 @@
                                 <p>This is a description for Product 1. Standard length</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-3">
                             <div class="product">
                                 <a href="/products/show">
                                     <h4 class="product_name">Product 1 <span class="price pull-right">$19.99</span></h4>
@@ -114,7 +114,7 @@
                                 <p>This is a description for Product 1. Standard length</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-3">
                             <div class="product">
                                 <a href="/products/show">
                                     <h4 class="product_name">Product 1 <span class="price pull-right">$19.99</span></h4>
@@ -123,7 +123,7 @@
                                 <p>This is a description for Product 1. Standard length</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-3">
                             <div class="product">
                                 <a href="/products/show">
                                     <h4 class="product_name">Product 1 <span class="price pull-right">$19.99</span></h4>
@@ -132,7 +132,7 @@
                                 <p>This is a description for Product 1. Standard length</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-3">
                             <div class="product">
                                 <a href="/products/show">
                                     <h4 class="product_name">Product 1 <span class="price pull-right">$19.99</span></h4>
@@ -141,7 +141,7 @@
                                 <p>This is a description for Product 1. Standard length</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-3">
                             <div class="product">
                                 <a href="/products/show">
                                     <h4 class="product_name">Product 1 <span class="price pull-right">$19.99</span></h4>
@@ -150,7 +150,7 @@
                                 <p>This is a description for Product 1. Standard length</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-3">
                             <div class="product">
                                 <a href="/products/show">
                                     <h4 class="product_name">Product 1 <span class="price pull-right">$19.99</span></h4>
@@ -159,7 +159,7 @@
                                 <p>This is a description for Product 1. Standard length</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-3">
                             <div class="product">
                                 <a href="/products/show">
                                     <h4 class="product_name">Product 1 <span class="price pull-right">$19.99</span></h4>
