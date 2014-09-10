@@ -1,12 +1,56 @@
+/* General Formatting
+ * ==================================
+ */
+
 body {
   padding-top: 70px;
+  background-image: url('../img/subtle_dots.png');
+  background-repeat: repeat;
+  font-family: 'Droid Sans', sans-serif;
 }
 img {
   width: 100%;
 }
+.jumbotron {
+  background-position: 200% 100%;
+  padding: 120px 0 120px 0;
+  margin-top: -20px;
+  background: url('../img/seamless_paper_texture.png');
+}
+.jumbotron h1 {
+  color: #428bca;
+}
+.jumbotron h2 {
+  margin-bottom: 20px;
+}
+.main_graphic {
+  border-radius: 6px;
+}
+
+/* Navbar
+ * ==================================
+ */
+
+.navbar-inverse {
+  opacity: 0.95;
+}
+.glyphicon-shopping-cart {
+  padding-right: 10px;
+}
+.alert-danger {
+  margin-top: -20px;
+}
+
+
+/* Products
+ * ==================================
+ */
+
 #categories {
   background-color: #eeeeee;
   margin-top: 40px;
+  opacity: 0.8;
+  border-radius: 6px;
 }
 .price {
   font-size: 0.7em;
@@ -27,6 +71,41 @@ img {
 #product_name {
   margin-top: 0;
 }
+
+/* Payment
+ * ==================================
+ */
+
 .cart_edit {
-  margin-left: 40px
+  margin-left: 20px;
+  margin-right: 25px;
+}
+.cart_update {
+  margin-left: 20px;
+}
+.continue_shopping {
+  margin-top: 20px;
+}
+#billing {
+  margin-bottom: 0;
+}
+.update_cart {
+  width: 50px;
+}
+#total {
+  margin-left: 50px;
+}
+
+/* Footer
+ * ==================================
+ */
+
+#footer {
+  border-top: 1px solid #eee;
+  margin: 40px 0;
+  padding: 20px 0;
+  text-align: center;
+}
+#footer p {
+  margin-bottom: 0;
 }
