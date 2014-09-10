@@ -20,20 +20,28 @@
             <div class="row">
                 <h2 class="page-header">Featured Products</h2>
                 <div class="col-sm-3">
-                    <h4 class="product_name">Product<span class="price pull-right">$19.99</span></h4>
-                    <img class="img-responsive img-rounded" src="http://lorempixel.com/205/205/">
+                    <a href="/products/show">
+                        <h4 class="product_name">Product<span class="price pull-right">$19.99</span></h4>
+                        <img class="img-responsive img-rounded" src="http://lorempixel.com/205/205/">
+                    </a>
                 </div>
                 <div class="col-sm-3">
-                    <h4 class="product_name">Product<span class="price pull-right">$19.99</span></h4>
-                    <img class="img-responsive img-rounded" src="http://lorempixel.com/204/204/">
+                    <a href="/products/show">
+                        <h4 class="product_name">Product<span class="price pull-right">$19.99</span></h4>
+                        <img class="img-responsive img-rounded" src="http://lorempixel.com/204/204/">
+                    </a>
                 </div>
                 <div class="col-sm-3">
-                    <h4 class="product_name">Product<span class="price pull-right">$19.99</span></h4>
-                    <img class="img-responsive img-rounded" src="http://lorempixel.com/203/203/">
+                    <a href="/products/show">
+                        <h4 class="product_name">Product<span class="price pull-right">$19.99</span></h4>
+                        <img class="img-responsive img-rounded" src="http://lorempixel.com/203/203/">
+                    </a>
                 </div>
                 <div class="col-sm-3">
-                    <h4 class="product_name">Product<span class="price pull-right">$19.99</span></h4>
-                    <img class="img-responsive img-rounded" src="http://lorempixel.com/202/202/">
+                    <a href="/products/show">
+                        <h4 class="product_name">Product<span class="price pull-right">$19.99</span></h4>
+                        <img class="img-responsive img-rounded" src="http://lorempixel.com/202/202/">
+                    </a>
                 </div>
                 <a href="/products/" type="button" class="continue_shopping pull-right btn btn-default btn-success">View More Products</a>
             </div>
