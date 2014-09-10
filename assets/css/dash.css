@@ -1,0 +1,42 @@
+body {
+  padding-top: 70px;
+}
+#admin_search {
+  margin-top: 0;
+  padding-left: 0;
+}
+#admin_filter label, #admin_filter select {
+    display: inline-block;
+}
+#admin_filter label {
+    padding-top: 5px;
+}
+#admin_table {
+    margin-top: 25px;
+}
+#admin_table td, #admin_table th{
+    text-align: center;
+    vertical-align: middle;
+}
+#admin_table img {
+    width: 100%;
+}
+#admin_login label{
+    width: 100px;
+}
+#admin_login input[type="submit"]{
+    margin-left: 212px;
+}
+#admin_table a {
+    border-right: 1px solid #428bca;
+    padding-right: 5px;
+}
+#admin_table a:last-child{
+    border: none;
+}
+.admin_upload input {
+  display: inline-block;
+}
+.admin_upload input:first-child{
+  width: 200px;
+}

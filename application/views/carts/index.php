@@ -2,8 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>eCommerce | Dashboard</title>
-
+        <title>eCommerce | Products</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -13,12 +12,11 @@
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
-        <link rel="stylesheet" type="text/css" href="../../assets/css/dash.css">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
     </head>
     <body>
         <!-- begin navbar -->
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -27,39 +25,43 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Dashboard</a>
+                    <a class="navbar-brand" href="#">Dojo</a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#">Orders</a></li>
-                        <li><a href="#">Products</a></li>
-                    </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Log off</a></li>
+                        <li class="active"><a href="#">Shopping Cart</a></li>
                     </ul>
                 </div>
             </div>
         </div><!-- end navbar -->
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h2 class="page-header">Admin Login Page</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-md-offset-3">
-                <form id="admin_login" action="#" method="post">
-                    <p>
-                        <label>Email:</label>
-                        <input type="text" name="email">
-                    </p>
-                    <p>
-                        <label>Password:</label>
-                        <input type="password" name="password">
-                    </p>
-                    <p>
-                        <input class="btn btn-sm btn-default" type="submit" value="Login">
-                    </p>
-                </form>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Black Belt for Staff</td>
+                                <td>$19.99</td>
+                                <td>1<a class="cart_edit" href="#">Edit</a></td>
+                                <td>$19.99</td>
+                            </tr>
+                            <tr>
+                                <td>Coding Dojo Cups</td>
+                                <td>$9.99</td>
+                                <td>3<a class="cart_edit" href="#">Edit</a></td>
+                                <td>$29.97</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </body>
