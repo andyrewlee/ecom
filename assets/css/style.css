@@ -11,6 +11,22 @@ body {
 img {
   width: 100%;
 }
+.jumbotron {
+  background-position: 200% 100%;
+  padding: 100px 0 120px 0;
+  margin-bottom: 70px;
+  margin-top: -20px;
+  background: url('../img/seamless_paper_texture.png');
+}
+.jumbotron h1 {
+  color: #428bca;
+}
+.jumbotron h2 {
+  margin-bottom: 20px;
+}
+.main_graphic {
+  border-radius: 6px;
+}
 
 /* Navbar
  * ==================================
@@ -34,7 +50,7 @@ img {
 #categories {
   background-color: #eeeeee;
   margin-top: 40px;
-  opacity: 0.7;
+  opacity: 0.8;
   border-radius: 6px;
 }
 .price {
@@ -94,4 +110,3 @@ img {
 #footer p {
   margin-bottom: 0;
 }
-
