@@ -42,7 +42,7 @@
                                 <div class="col-sm-2">
                                     <label>Quantity</label>
                                     <input class="form-control" type="text" name="quantity" value=1>
-                                    <button id="purchase" type="button" class="pull-right btn btn-primary">Purchase</button>
+                                    <a href="#" id="purchase" type="button" class="pull-right btn btn-custom-lighten">Purchase</a>
                                 </div>
                             </div>
                         </div>
