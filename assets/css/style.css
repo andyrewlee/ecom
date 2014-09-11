@@ -87,13 +87,17 @@ img {
   margin-top: 20px;
 }
 #billing {
-  margin-bottom: 0;
+  margin-top: 20px;
+  text-align: right;
 }
 .update_cart {
   width: 50px;
 }
 #total {
   margin-left: 50px;
+}
+#stripe {
+  text-align: right;
 }
 
 /* Footer
