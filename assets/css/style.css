@@ -180,6 +180,9 @@ h4, a {
 #product_name {
   margin-top: 0;
 }
+li#current_category {
+ text-decoration: underline;
+}
 
 /* Payment
  * ==================================
