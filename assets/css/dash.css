@@ -11,6 +11,9 @@ body {
 #admin_filter label {
     padding-top: 5px;
 }
+#add_new_category {
+  margin-left: 10px;
+}
 #admin_table {
     margin-top: 25px;
 }

@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8">
         <title>eCommerce | Dashboard</title>
-
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -24,23 +23,65 @@
                 if (input.files && input.files[0]) {
                     var reader = new FileReader();
                     reader.onload = function (e) {
-                        $("#blah"+number).attr('src', e.target.result);
+                        $(".blah"+number).attr('src', e.target.result);
                     }
                     reader.readAsDataURL(input.files[0]);
                 };
             };
 
-            $("#imgInp").change(function(){
-            readURL(this,0);
+            $(document).on("click", "#add_new_product",function(){
+                $.post(
+                    "/categories/index",
+                    function(data){
+                        html = "";
+                        for (var i = 0; i < data.length; i++){
+                            var html = html + "<option value="+data[i]["id"]+">"+data[i]["name"]+"</option>"
+                        }
+                        $(".categories_select").html(html);
+                        },"json");
             });
-            $("#imgInp1").change(function(){
-            readURL(this,1);
+
+            $(document).on("click","#edit_product",function(){
+                $.post(
+                    "/categories/index",
+                    function(data){
+                        html = "";
+                        for (var i = 0; i < data.length; i++){
+                            var html = html + "<option value="+data[i]["id"]+">"+data[i]["name"]+"</option>"
+                        }
+                        $(".categories_select").html(html);
+                    },"json");
+                $.get(
+                    $(this).attr("action"),
+                    function(data){
+                        $("h4#myModalLabel2").text("Edit Product - ID "+data["id"]);
+                        $("form#update_product").attr("action", "/products/create/"+data["id"]);
+                        $("input[name='product_name']").val(data["name"]);
+                        $("#update_product_description").text(data["description"]);
+                    },"json");
+                return false;
             });
-            $("#imgInp2").change(function(){
-            readURL(this,2);
+
+            $("#add_new_category").on("click", function(){
+                $.post(
+                        "/categories/create",
+                        $("#add_cat").serialize(),
+                        function(data){
+                            $("#categories_select").append("<option selected value="+data[1]["id"]+">"+data[0]["new_category"]+"</option>");
+                        },"json");
             });
-            $("#imgInp3").change(function(){
-            readURL(this,3);
+
+            $(".file1").change(function(){
+                readURL(this,1);
+            });            
+            $(".file2").change(function(){
+                readURL(this,2);
+            });            
+            $(".file3").change(function(){
+                readURL(this,3);
+            });            
+            $(".file4").change(function(){
+                readURL(this,4);
             });
         });
         </script>
@@ -54,103 +95,106 @@
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                         <h4 class="modal-title" id="myModalLabel">Add New Product</h4>
                     </div>
-                    <div class="modal-body">
-                        <form action="products" method="post" enctype="multipart/form-data">
+                    <form id="create_product" action="/products/create" method="post" enctype="multipart/form-data">
+                        <div class="modal-body">
                             <p><label>Name:</label></p>
-                            <p><input type="text" name="product_name"></p>
+                            <p><input type="text" name="name"></p>
                             <p><label>Description:</label></p>
-                            <p><textarea name="product_description"></textarea></p>
+                            <p><textarea name="description"></textarea></p>
                             <p><label>Categories:</label></p>
                             <p>
-                                <select>
-                                    <option value="hat">Hat</option>
-                                    <option value="mug">Mug</option>
-                                    <option value="pants">Pants</option>
-                                    <option value="key_chain">Key Chain</option>
-                                    <option value="belt">Belt</option>
+                                <select class="categories_select" name="category">                           
                                 </select>
                             </p>
                             <p><label>Add new category:</label></p>
-                            <p><input type="text" name="new_category"></p>
-                            <p><label>Upload Image:</label></p>
+                            <p>
+                                <input class="add_cat" type="text" name="new_category">
+                                <button class="add_new_category btn btn-primary btn-xs" type="button">Add</button>
+                            </p>                             
+                            <p><label>Price:</label></p>
+                            <p><input type="text" name="product_price"></p>
+                            <p><label>Inventory Count:</label></p>
+                            <p><input type="text" name="inventory"></p>
+                            <p><label>Upload Main Image:</label></p>
                             <p class="admin_upload">
-                                <input type="file" name="file" id="imgInp">
-                                <input class="btn btn-xs btn-success" type="submit" value="Upload Main">
-                                <img id="blah0" src="http://www.jarsandbottles.co.uk/wp-content/themes/dragonsdesign/images/default.jpg" width="65" height="65" alt="your image">
+                                <input type="file" name="file1" class="file1">
+                                <img class="blah1" src="http://www.jarsandbottles.co.uk/wp-content/themes/dragonsdesign/images/default.jpg" width="65" height="65" alt="your image">
                             </p>
+                            <p><label>Upload Minor Image:</label></p>
                             <p class="admin_upload">
-                                <input type="file" name="file" id="imgInp1">
-                                <input class="btn btn-xs btn-success" type="submit" value="Upload Supplementary 1">
-                                <img id="blah1" src="http://www.jarsandbottles.co.uk/wp-content/themes/dragonsdesign/images/default.jpg" width="65" height="65" alt="your image">
+                                <input type="file" name="file2" class="file2">
+                                <img class="blah2" src="http://www.jarsandbottles.co.uk/wp-content/themes/dragonsdesign/images/default.jpg" width="65" height="65" alt="your image">
                             </p>
+                            <p><label>Upload Minor Image:</label></p>                            
                             <p class="admin_upload">
-                                <input type="file" name="file" id="imgInp2">
-                                <input class="btn btn-xs btn-success" type="submit" value="Upload Supplementary 2">
-                                <img id="blah2" src="http://www.jarsandbottles.co.uk/wp-content/themes/dragonsdesign/images/default.jpg" width="65" height="65" alt="your image">
+                                <input type="file" name="file3" class="file3">
+                                <img class="blah3" src="http://www.jarsandbottles.co.uk/wp-content/themes/dragonsdesign/images/default.jpg" width="65" height="65" alt="your image">
                             </p>
+                            <p><label>Upload Minor Image:</label></p>                            
                             <p class="admin_upload">
-                                <input type="file" name="file" id="imgInp3">
-                                <input class="btn btn-xs btn-success" type="submit" value="Upload Supplementary 3">
-                                <img id="blah3" src="http://www.jarsandbottles.co.uk/wp-content/themes/dragonsdesign/images/default.jpg" width="65" height="65" alt="your image">
+                                <input type="file" name="file4" class="file4">
+                                <img class="blah4" src="http://www.jarsandbottles.co.uk/wp-content/themes/dragonsdesign/images/default.jpg" width="65" height="65" alt="your image">
                             </p>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <input type="submit" class="btn btn-primary" value="Save Product">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div> <!-- end modal -->
+
         <!-- Modal Edit New Product-->
         <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Edit Product</h4>
+                        <h4 class="modal-title" id="myModalLabel2"></h4>
                     </div>
-                    <div class="modal-body">
-                        <form action="products" method="post" enctype="multipart/form-data">
+                    <form id="update_product" action="" method="post" enctype="multipart/form-data">
+                        <div class="modal-body">
                             <p><label>Name:</label></p>
                             <p><input type="text" name="product_name"></p>
                             <p><label>Description:</label></p>
-                            <p><textarea name="product_description"></textarea></p>
+                            <p><textarea id="update_product_description" name="product_description"></textarea></p>
                             <p><label>Categories:</label></p>
                             <p>
-                                <select>
-                                    <option value="hat">Hat</option>
-                                    <option value="mug">Mug</option>
-                                    <option value="pants">Pants</option>
-                                    <option value="key_chain">Key Chain</option>
-                                    <option value="belt">Belt</option>
+                                <select class="categories_select" name="categories">
                                 </select>
                             </p>
                             <p><label>Add new category:</label></p>
-                            <p><input type="text" name="new_category"></p>
-                            <p><label>Upload Image:</label></p>
+                            <p>
+                                <input class="add_cat" type="text" name="new_category">
+                                <button class="add_new_category btn btn-primary btn-xs" type="button">Add</button>
+                            </p>   
+                            <p><label>Upload Main Image:</label></p>
                             <p class="admin_upload">
-                                <input type="file" name="file">
-                                <input class="btn btn-xs btn-success" type="submit" value="Upload Main">
+                                <input type="file" name="file1" class="file1">
+                                <img class="blah1" src="http://www.jarsandbottles.co.uk/wp-content/themes/dragonsdesign/images/default.jpg" width="65" height="65" alt="your image">
                             </p>
+                            <p><label>Upload Minor Image:</label></p>
                             <p class="admin_upload">
-                                <input type="file" name="file">
-                                <input class="btn btn-xs btn-success" type="submit" value="Upload Supplementary 1">
+                                <input type="file" name="file2" class="file2">
+                                <img class="blah2" src="http://www.jarsandbottles.co.uk/wp-content/themes/dragonsdesign/images/default.jpg" width="65" height="65" alt="your image">
                             </p>
+                            <p><label>Upload Minor Image:</label></p>                            
                             <p class="admin_upload">
-                                <input type="file" name="file">
-                                <input class="btn btn-xs btn-success" type="submit" value="Upload Supplementary 2">
+                                <input type="file" name="file3" class="file3">
+                                <img class="blah3" src="http://www.jarsandbottles.co.uk/wp-content/themes/dragonsdesign/images/default.jpg" wclassth="65" height="65" alt="your image">
                             </p>
+                            <p><label>Upload Minor Image:</label></p>                            
                             <p class="admin_upload">
-                                <input type="file" name="file">
-                                <input class="btn btn-xs btn-success" type="submit" value="Upload Supplementary 3">
+                                <input type="file" name="file4" class="file4">
+                                <img class="blah4" src="http://www.jarsandbottles.co.uk/wp-content/themes/dragonsdesign/images/default.jpg" width="65" height="65" alt="your image">
                             </p>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <input type="submit" class="btn btn-primary" value="Update Product">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div> <!-- end modal -->
@@ -192,7 +236,7 @@
                 </div>
                 <div id="admin_filter" class="col-md-4 col-md-offset-4">
                     <!-- Button trigger modal -->
-                    <button class="btn btn-success btn-md pull-right" data-toggle="modal" data-target="#myModal">Add New Product</button>
+                    <button id="add_new_product" class="btn btn-success btn-md pull-right" data-toggle="modal" data-target="#myModal">Add New Product</button>
                 </div>
             </div>
 
@@ -210,112 +254,23 @@
                             </tr>
                         </theader>
                         <tbody>
+<?php                   foreach ($products as $product)
+                        {   ?>                            
                             <tr>
                                 <td><img class="img-rounded" src="http://lorempixel.com/44/44"></td>
-                                <td>1</td>
-                                <td>T-Shirt</td>
-                                <td>123</td>
-                                <td>1000</td>
+                                <td><?= $product["product_id"] ?></td>
+                                <td><?= $product["product_name"] ?></td>
+                                <td><?= $product["product_inventory"] ?></td>
+                                <td><?= $product["quantity_sold"] ?></td>
                                 <td>
                                     <div class="btn-group btn-group-sm">
                                         <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editModal">Edit</button>
+                                        <button id="edit_product" action="/products/edit/<?= $product['product_id'] ?>" type="button" class="btn btn-warning" data-toggle="modal" data-target="#editModal">Edit</button>
                                         <button type="button" class="btn btn-danger">Delete</button>
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <td><img class="img-rounded" src="http://lorempixel.com/45/45"></td>
-                                <td>2</td>
-                                <td>Hats</td>
-                                <td>3</td>
-                                <td>20</td>
-                                <td>
-                                    <div class="btn-group btn-group-sm">
-                                        <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editModal">Edit</button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img class="img-rounded" src="http://lorempixel.com/46/46"></td>
-                                <td>3</td>
-                                <td>Mugs</td>
-                                <td>12</td>
-                                <td>4</td>
-                                <td>
-                                    <div class="btn-group btn-group-sm">
-                                        <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editModal">Edit</button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img class="img-rounded" src="http://lorempixel.com/47/47"></td>
-                                <td>4</td>
-                                <td>Pants</td>
-                                <td>57</td>
-                                <td>14</td>
-                                <td>
-                                    <div class="btn-group btn-group-sm">
-                                        <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editModal">Edit</button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img class="img-rounded" src="http://lorempixel.com/48/48"></td>
-                                <td>5</td>
-                                <td>Belts</td>
-                                <td>78</td>
-                                <td>30</td>
-                                <td>
-                                    <div class="btn-group btn-group-sm">
-                                        <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editModal">Edit</button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img class="img-rounded" src="http://lorempixel.com/49/49"></td>
-                                <td>6</td>
-                                <td>Sweaters</td>
-                                <td>219</td>
-                                <td>130</td>
-                                <td>
-                                    <div class="btn-group btn-group-sm">
-                                        <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editModal">Edit</button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
-                            </tr>
-                            <tr>
-                                <td><img class="img-rounded" src="http://lorempixel.com/50/50"></td>
-                                <td>50</td>
-                                <td>Shoes</td>
-                                <td>1</td>
-                                <td>5100</td>
-                                <td>
-                                    <div class="btn-group btn-group-sm">
-                                        <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editModal">Edit</button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
-                                    </div>
-                                </td>
-                            </tr> 
+<?php                   }   ?>                            
                         </tbody>
                     </table>
                 </div>

@@ -1,4 +1,12 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/*
+|--------------------------------------------------------------------------
+| S3 Cloud Constants
+|--------------------------------------------------------------------------
+*/
+define('BUCKET', 'ecommimages');
+define('ACCESS_KEY', "AKIAJFZOJI275MMF3DTQ");
+define('PRIVATE_KEY', "wUWIazvJ+uplpFewsp6OMisrJ8dj/utgI3jtW1+a");
 
 /*
 |--------------------------------------------------------------------------
