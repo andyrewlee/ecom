@@ -200,7 +200,7 @@ li#current_category {
   margin-left: 20px;
   margin-right: 25px;
 }
-.cart_update {
+.cart_update, .cart_delete {
   margin-left: 20px;
 }
 .continue_shopping {
@@ -218,6 +218,9 @@ li#current_category {
 }
 #stripe {
   text-align: right;
+}
+#update_form {
+  display: inline-block;
 }
 
 /* Footer

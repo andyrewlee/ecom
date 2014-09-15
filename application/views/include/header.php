@@ -31,7 +31,7 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul id="shopping_cart_count" class="nav navbar-nav navbar-right">
-                        <?php include($_SERVER['DOCUMENT_ROOT']."/application/views/include/shopping_cart.php"); ?>
+                        <?php include($_SERVER['DOCUMENT_ROOT']."/application/views/include/shopping_cart_count.php"); ?>
                     </ul>
                 </div>
             </div>
