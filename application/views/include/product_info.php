@@ -47,7 +47,8 @@
                                 <h2 id="total_price" class="pull-right"><?= $product_and_images[0]['product_price'] ?></h2>
                                 </div>
                                 <div class="col-sm-2">
-                                    <form action="carts/add_to_cart/" method="post">
+                                    <form id="change_count" action="/carts/add_to_cart/" method="post">
+                                        <input type="hidden" name="product_id" value=<?= $product_and_images[0]['product_id'] ?>>
                                         <label>Quantity</label>
                                         <input class="form-control" type="text" name="quantity" value=1>
                                         <input id="add_to_cart" type="submit" class="pull-right btn btn-custom-lighten" value="Add to Cart">

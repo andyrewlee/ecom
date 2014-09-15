@@ -47,6 +47,13 @@ $(document).on('click', '#back_to_shopping', function(){
     return false;
 });
 
+$(document).on('submit', '#change_count', function(){
+    $.post($(this).attr('action'), $(this).serialize(), function(data_received) {
+        $('#shopping_cart_count').html(data_received);
+    });
+    return false;
+});
+
 
 </script>
 </html>

@@ -21,12 +21,11 @@ class Products extends CI_Controller {
                                                   'category' => $session['category_id'],
                                                   'page' => $session['page'],
                                                   'start' => $session['start'],
-                                                  'option' => $session['option']));
+                                                  'option' => $session['option'],
+                                                  'session' => $session));
     }
     public function show($product_id)
     {
-        // store last page visited in session
-        // find id product_name product_description product_price and its four images with product_id
         $product_and_images = $this->Product->find_product_and_images($product_id);
         $this->load->view('include/product_info.php', array('product_and_images' => $product_and_images));
     }
