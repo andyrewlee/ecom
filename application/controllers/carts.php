@@ -9,10 +9,7 @@ class Carts extends CI_Controller {
     public function charge()
     {
         $post = $this->input->post();
-        var_dump($post);
-        die();
         $this->load->view('carts/charge');
-
     }
 }
 

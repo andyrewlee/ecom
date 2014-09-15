@@ -5,6 +5,7 @@
         <?php include($_SERVER['DOCUMENT_ROOT']."/application/views/include/footer.php"); ?>
     </body>
 <script>
+
 $(document).on('click', '.page_number', function(){
     $.get($(this).attr('href'), function(data_received){
         $('#products_info').html(data_received);

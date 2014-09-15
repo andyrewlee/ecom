@@ -1,76 +1,92 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Products extends CI_Controller {
-
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Product');
+    }
     public function index()
     {
-        $this->load->model('Product');
-        $this->session->set_userdata('category_id', 0);
-        $this->session->set_userdata('page', 1);
-        $this->session->set_userdata('option', 0);
-        $this->session->set_userdata('start', 0);
-        $session = $this->session->all_userdata();
+        $context = array(
+                           'category_id' => 0,
+                           'page' => 1,
+                           'option' => 0,
+                           'start' => 0    );
 
+        $session = $this->set_session($context);
         $products_info = $this->Product->filter_products($session);
+
         $this->load->view('products/index', array('products_info' => $products_info,
                                                   'category' => $session['category_id'],
                                                   'page' => $session['page'],
                                                   'start' => $session['start'],
-                                                  'option' => $session['option'])
-                         );
+                                                  'option' => $session['option']));
     }
     public function show()
     {
         $this->load->view('products/show');
     }
-    public function change_category($id) {
-        $this->load->model('Product');
-        $this->session->set_userdata('category_id', $id);
-        $this->session->set_userdata('page', 1);
-        $this->session->set_userdata('option', 0);
-        $this->session->set_userdata('start', 0);
-        $session = $this->session->all_userdata();
+    public function change_category($id)
+    {
+        $context = array(
+                           'category_id' => $id,
+                           'page' => 1,
+                           'option' => 0,
+                           'start' => 0    );
+
+        $session = $this->set_session($context);
         $products_info = $this->Product->filter_products($session);
+
         $this->load->view('include/products_info.php', array('products_info' => $products_info,
                                                              'category' => $session['category_id'],
                                                              'page' => $session['page'],
                                                              'start' => $session['start'],
-                                                             'option' => $session['option'])
-                         );
+                                                             'option' => $session['option']));
 
     }
     public function change_page($id)
     {
-        $this->load->model('Product');
-        $this->session->set_userdata('page', $id);
-        $this->session->set_userdata('start', (($id - 1) * 16));
-        $session = $this->session->all_userdata();
+        $context = array(
+                           'page' => $id,
+                           'start' => (($id - 1) * 16));
+
+        $session = $this->set_session($context);
         $products_info = $this->Product->filter_products($session);
+
         $this->load->view('include/products_info.php', array('products_info' => $products_info,
                                                              'category' => $session['category_id'],
                                                              'page' => $session['page'],
                                                              'start' => $session['start'],
-                                                             'option' => $session['option'])
-                         );
+                                                             'option' => $session['option']));
 
     }
     public function change_option($id)
     {
-        $this->load->model('Product');
-        $this->session->set_userdata('page', 1);
-        $this->session->set_userdata('option', $id);
-        $this->session->set_userdata('start', 0);
+        $context = array(
+                           'page' => 1,
+                           'option' => $id,
+                           'start' => 0    );
 
-        $session = $this->session->all_userdata();
+        $session = $this->set_session($context);
         $products_info = $this->Product->filter_products($session);
+
         $this->load->view('include/products_info.php', array('products_info' => $products_info,
                                                              'category' => $session['category_id'],
                                                              'page' => $session['page'],
                                                              'start' => $session['start'],
-                                                             'option' => $session['option'])
-                         );
+                                                             'option' => $session['option']));
 
     }
+    public function set_session($array)
+    {
+        foreach($array as $key => $value)
+        {
+            $this->session->set_userdata($key, $value);
+        }
+        return $this->session->all_userdata();
+    }
+
 }
 
 /* End of file welcome.php */

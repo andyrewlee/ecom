@@ -15,6 +15,7 @@ class Product extends CI_Model {
                   ON products.id = images.product_id
                   WHERE images.picture_order=1";
 
+        // Category Filter
         if($session['category_id'] == 1)
         {
             $query = $query . ' AND categories.id = 1';
@@ -40,6 +41,7 @@ class Product extends CI_Model {
             $query = $query . ' AND categories.id = 6';
         }
 
+        // Option Filter
         if($session["option"] == 0)
         {
             $query = $query . " ORDER BY products.created_at DESC";
@@ -53,6 +55,9 @@ class Product extends CI_Model {
             $query = $query . " ORDER BY products.price DESC";
         }
         return $this->db->query($query)->result_array();
-
     }
 }
+
+
+/* End of file product.php */
+/* Location: ./application/models/carts.php */

@@ -1,19 +1,8 @@
 <?php include($_SERVER['DOCUMENT_ROOT']."/application/views/include/header.php"); ?>
         <div class="container">
             <div class="row">
-                <div class="col-md-2">
-                    <div id="categories" class="bs-docs-sidebar">
-                        <ul class="nav bs-docs-sidenav">
-                            <li><a href="/products/">Category 1</a></li>
-                            <li><a href="/products/">Category 2</a></li>
-                            <li><a href="/products/">Category 3</a></li>
-                            <li><a href="/products/">Category 4</a></li>
-                            <li><a href="/products/">Category 5</a></li>
-                            <li><a href="/products/">Category 6</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="product_show" class="col-md-10">
+                <div id="product_show" class="col-md-12">
+                    <a id="back_to_shopping" href="#">Back to shopping</a>
                     <div class="row">
                         <div class="col-md-5">
                             <img id="main_picture" class="img-responsive img-rounded" src="http://lorempixel.com/200/200/">
