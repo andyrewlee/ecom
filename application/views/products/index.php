@@ -32,7 +32,6 @@ $(document).on('click', '.product_link', function() {
         $('#products_info').html(data_received);
     });
     return false;
-    var main_picture_source = $('#main_picture').attr('src');
 });
 
 $(document).on('mouseenter', '#product_images img', function(){

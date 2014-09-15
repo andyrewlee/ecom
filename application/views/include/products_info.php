@@ -65,7 +65,7 @@
                 <div class="col-sm-10">
                     <h2 class="page-header"><?= $current_category ?></h2>
                     <div class="row">
-                        <div>
+                        <div class="col-sm-12">
                             <ul class="pagination">
 <?php
                                 for( $i=1; $i <= ceil(count($products_info)/16); $i++)
