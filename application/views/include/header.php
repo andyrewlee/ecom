@@ -30,11 +30,10 @@
                     <a class="navbar-brand" href="/">Dojo</a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="/carts"><span class="glyphicon glyphicon-shopping-cart"></span>Shopping Cart</a>
-                        </li>
+                    <ul id="shopping_cart_count" class="nav navbar-nav navbar-right">
+                        <?php include($_SERVER['DOCUMENT_ROOT']."/application/views/include/shopping_cart.php"); ?>
                     </ul>
                 </div>
             </div>
         </div><!-- end navbar -->
+

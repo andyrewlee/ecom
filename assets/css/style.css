@@ -11,6 +11,11 @@ body {
 img {
   width: 100%;
 }
+
+/* Landing Page
+ * ==================================
+ */
+
 .jumbotron {
   background-position: 200% 100%;
   padding: 120px 0 120px 0;
@@ -18,7 +23,7 @@ img {
   background: url('../img/seamless_paper_texture.png');
 }
 .jumbotron h1 {
-  color: #428bca;
+  color: #28A0E5;
 }
 .jumbotron h2 {
   margin-bottom: 20px;
@@ -26,13 +31,121 @@ img {
 .main_graphic {
   border-radius: 6px;
 }
+h4, a {
+  color: #28A0E5;
+}
 
-/* Navbar
+/* Blue Color Scheme (button and navbar)
  * ==================================
  */
 
+.btn-primary {
+  background-image: linear-gradient(#7dc5ee, #008cdd 85%, #30a2e4);
+}
+.btn-custom-lighten.active {
+    color: rgba(255, 255, 255, 0.75);
+}
+.btn-custom-lighten {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #3aa8e7;
+  background-image: -moz-linear-gradient(top, #28a0e5, #55b4eb);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#28a0e5), to(#55b4eb));
+  background-image: -webkit-linear-gradient(top, #28a0e5, #55b4eb);
+  background-image: -o-linear-gradient(top, #28a0e5, #55b4eb);
+  background-image: linear-gradient(to bottom, #28a0e5, #55b4eb);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff28a0e5', endColorstr='#ff55b4eb', GradientType=0);
+  border-color: #55b4eb #55b4eb #1a94d9;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #55b4eb;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-custom-lighten:hover,
+.btn-custom-lighten:focus,
+.btn-custom-lighten:active,
+.btn-custom-lighten.active,
+.btn-custom-lighten.disabled,
+.btn-custom-lighten[disabled] {
+  color: #ffffff;
+  background-color: #55b4eb;
+  *background-color: #3faae8;
+}
+.btn-custom-lighten:active,
+.btn-custom-lighten.active {
+  background-color: #28a0e5 ;
+}
 .navbar-inverse {
   opacity: 0.95;
+  background-color: #28A0E5;
+  background-image: linear-gradient(#7dc5ee, #008cdd 85%, #30a2e4);
+  border-color: #28A0E5;
+}
+.navbar-inverse .navbar-brand {
+  /* title */
+  color: #fff;
+}
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+  color: #ddd;
+}
+.navbar-inverse .navbar-nav > li > a {
+  /* link */
+  color: #fff;
+}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #ddd;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: #28A0E5;
+  background-color: #fff;
+}
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+  color: #28A0E5;
+  background-color: #fff;
+}
+.navbar-inverse .navbar-nav > .dropdown > a .caret {
+  /* caret */
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+}
+.navbar-inverse .navbar-nav > .dropdown > a:hover .caret,
+.navbar-inverse .navbar-nav > .dropdown > a:focus .caret {
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+}
+.navbar-inverse .navbar-nav > .open > a .caret,
+.navbar-inverse .navbar-nav > .open > a:hover .caret,
+.navbar-inverse .navbar-nav > .open > a:focus .caret {
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+}
+.navbar-inverse .navbar-toggle {
+  /* mobile version */
+  border-color: #fff;
+}
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+  background-color: #28A0E5;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border-color: #fff;
+}
+@media (max-width: 767px) {
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: #fff;
+  }
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ddd;
+  }
 }
 .glyphicon-shopping-cart {
   padding-right: 10px;
@@ -49,27 +162,34 @@ img {
 #categories {
   background-color: #eeeeee;
   margin-top: 40px;
-  opacity: 0.8;
+  opacity: 0.9;
   border-radius: 6px;
 }
 .price {
   font-size: 0.7em;
-  color: #428bca;
+  color: #28A0E5;
 }
 #product_images {
   margin: 20px 0;
 }
-#purchase {
+#add_to_cart {
   margin-top: 20px;
 }
 #total_price {
-  color: #428bca;
+  color: #28A0E5;
 }
 #product_show {
   margin-top: 40px;
 }
 #product_name {
   margin-top: 0;
+}
+li#current_category {
+ text-decoration: underline;
+}
+#back_to_shopping {
+  margin-bottom: 20px;
+  display: block;
 }
 
 /* Payment
@@ -87,13 +207,17 @@ img {
   margin-top: 20px;
 }
 #billing {
-  margin-bottom: 0;
+  margin-top: 20px;
+  text-align: right;
 }
 .update_cart {
   width: 50px;
 }
 #total {
   margin-left: 50px;
+}
+#stripe {
+  text-align: right;
 }
 
 /* Footer

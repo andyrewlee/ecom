@@ -1,0 +1,25 @@
+Sign Up
+
+Stripe Checkout(PHP)
+  Download Stripe PHP Library
+    Include into project folder (in vendor)
+  Create config.php
+    requires Stripe PHP Library
+    create variable $stripe as associative array
+      secret_key && publishabe_key
+        Get this from account settings -> api keys
+          While developing use both keys from test
+    Set apikey
+  Put form onto your page (blue button)
+    heads over to charge.php
+      Will show the data that is coming back
+
+charge.php
+  Token: card that has been authorized for a specific amount
+    use the token to create the customer
+      get_class_methods on the customer to
+        see what else you can get about customer
+    Then charge the customer a particular value
+
+Customize form by adding data attributes
+  Add all the ones from highly recommended
