@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 class Image extends CI_model{
     function __construct() {
         parent::__construct();
@@ -10,7 +11,7 @@ class Image extends CI_model{
         $query = "INSERT INTO Images (product_id,name,url,picture_order,created_at,updated_at) VALUES(?,?,?,?,?,?)";
         $values = array($product["id"],$image["name"],$image["url"],$image["picture_order"],date("Y-m-d, H:i:s"),date("Y-m-d, H:i:s"));
         return $this->db->query($query,$values);
-    
+
     }
     function add_image_to_cloud($file)
     {
@@ -29,14 +30,14 @@ class Image extends CI_model{
                         array(),
                         array(),
                         S3::STORAGE_CLASS_RRS
-                        );  
+                        );
     }
 
-    function get_image_from_cloud() 
+    function get_image_from_cloud()
     {
         $s3 = new S3(ACCESS_KEY, PRIVATE_KEY);
-        $bucket = $s3->getBucket(BUCKET);  
-        
+        $bucket = $s3->getBucket(BUCKET);
+
         end($bucket);   //move the internal pointer to the end of the array
         $image = key($bucket); //get the key of the element by the internal pointer
         $image_url = "https://s3-us-west-2.amazonaws.com/".BUCKET."/".$image;

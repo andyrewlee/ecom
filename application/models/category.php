@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 class Category extends CI_Model{
     function get_all_categories()
     {
