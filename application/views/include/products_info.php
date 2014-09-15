@@ -114,12 +114,12 @@
                                  {    ?>
                                      <div class="col-sm-8">
                                          <div class="product">
-                                             <a href="/products/show/<?= $products_info[$i]['product_id'] ?>">
+                                             <a class="product_link" href="/products/show/<?= $products_info[$i]['product_id'] ?>">
                                                  <h4 class="product_name"><?= $products_info[$i]["product_name"] ?><span class="price pull-right"><?= $products_info[$i]["product_price"] ?></span></h4>
                                                  <img class="img-responsive img-rounded" src="<?= $products_info[$i]['img_src'] ?>">
                                              </a>
                                              <p>
-                                             <?php echo substr($products_info[$i]["product_description"], 0, 50) . "..." ?>
+                                                 <?= substr($products_info[$i]["product_description"], 0, 50) . "..." ?>
                                              </p>
                                          </div>
                                      </div>
@@ -128,12 +128,12 @@
                                  {    ?>
                                      <div class="col-sm-4">
                                          <div class="product">
-                                             <a href="/products/show/<?= $products_info[$i]['product_id'] ?>">
+                                             <a class="product_link" href="/products/show/<?= $products_info[$i]['product_id'] ?>">
                                                  <h4 class="product_name"><?= $products_info[$i]["product_name"] ?><span class="price pull-right"><?= $products_info[$i]["product_price"] ?></span></h4>
                                                  <img class="img-responsive img-rounded" src="<?= $products_info[$i]['img_src'] ?>">
                                              </a>
                                              <p>
-                                             <?php echo substr($products_info[$i]["product_description"], 0, 50) . "..." ?>
+                                                 <?= substr($products_info[$i]["product_description"], 0, 50) . "..." ?>
                                              </p>
                                          </div>
                                      </div>
@@ -142,12 +142,12 @@
                                  {    ?>
                                      <div class="col-sm-3">
                                          <div class="product">
-                                             <a href="/products/show/<?= $products_info[$i]['product_id'] ?>">
+                                             <a class="product_link" href="/products/show/<?= $products_info[$i]['product_id'] ?>">
                                                  <h4 class="product_name"><?= $products_info[$i]["product_name"] ?><span class="price pull-right"><?= $products_info[$i]["product_price"] ?></span></h4>
                                                  <img class="img-responsive img-rounded" src="<?= $products_info[$i]['img_src'] ?>">
                                              </a>
                                              <p>
-                                             <?php echo substr($products_info[$i]["product_description"], 0, 50) . "..." ?>
+                                                 <?= substr($products_info[$i]["product_description"], 0, 50) . "..." ?>
                                              </p>
                                          </div>
                                      </div>

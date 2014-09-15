@@ -56,6 +56,18 @@ class Product extends CI_Model {
         }
         return $this->db->query($query)->result_array();
     }
+    function find_product_and_images($product_id)
+    {
+        $query = "SELECT products.id AS product_id, products.name AS product_name,
+                  products.description AS product_description,
+                  products.price AS product_price,
+                  images.url AS img_src, images.picture_order AS pic_order
+                  FROM products
+                  JOIN images ON products.id = images.product_id
+                  WHERE product_id = ?
+                  ORDER BY pic_order";
+        return $this->db->query($query, array($product_id))->result_array();
+    }
 }
 
 

@@ -11,6 +11,9 @@ class Carts extends CI_Controller {
         $post = $this->input->post();
         $this->load->view('carts/charge');
     }
+    public function add_to_cart()
+    {
+    }
 }
 
 /* End of file carts.php */

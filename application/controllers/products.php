@@ -23,9 +23,24 @@ class Products extends CI_Controller {
                                                   'start' => $session['start'],
                                                   'option' => $session['option']));
     }
-    public function show()
+    public function show($product_id)
     {
-        $this->load->view('products/show');
+        // store last page visited in session
+        // find id product_name product_description product_price and its four images with product_id
+        $product_and_images = $this->Product->find_product_and_images($product_id);
+        $this->load->view('include/product_info.php', array('product_and_images' => $product_and_images));
+    }
+    public function go_back()
+    {
+        $session = $this->session->all_userdata();
+        $products_info = $this->Product->filter_products($session);
+
+        $this->load->view('include/products_info.php', array('products_info' => $products_info,
+                                                             'category' => $session['category_id'],
+                                                             'page' => $session['page'],
+                                                             'start' => $session['start'],
+                                                             'option' => $session['option']));
+
     }
     public function change_category($id)
     {
@@ -89,5 +104,5 @@ class Products extends CI_Controller {
 
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+/* End of file products.php */
+/* Location: ./application/controllers/products.php */
